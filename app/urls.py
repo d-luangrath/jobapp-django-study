@@ -4,6 +4,7 @@ from app import views
 
 urlpatterns = [
     path('', views.job_list, name='jobs_home'),
-    path('job/<int:id>', views.job_detail, name='jobs_detail'),
+    path('hello/', views.hello, name="hello"),
+    path('job/<int:job_id>', views.job_detail, name='jobs_detail'),
     # path('job/<str:id>', views.job_detail),
 ]
