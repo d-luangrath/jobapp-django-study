@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.template import loader
+from app.models import JobPost
 
 
 job_title = [
@@ -32,15 +33,9 @@ def hello(request):
     return render(request, "app/hello.html", context)
 
 def job_list(request):
-    # list_of_jobs = "<ul>"
-    # for j in job_title:
-    #     job_id = job_title.index(j)
-    #     detail_url = reverse('jobs_detail', args=(job_id,))
-    #     list_of_jobs += f"<li><a href='{detail_url}'>{j}</a></li>"
-    # list_of_jobs += "</ul>"
-    # return HttpResponse(list_of_jobs)
+    jobs = JobPost.objects.all()
     context={
-        "job_title_list": job_title
+        "jobs": jobs
     }
     return render(request, "app/index.html", context)
 
@@ -48,9 +43,13 @@ def job_detail(request, job_id):
     try:
         if job_id == 0:
             return redirect(reverse('jobs_home'))
+        # context={
+        #     "job_title": job_title[job_id],
+        #     "job_description": job_description[job_id],
+        # }
+        job = JobPost.objects.get(id=job_id)
         context={
-            "job_title": job_title[job_id],
-            "job_description": job_description[job_id],
+            "job": job
         }
         return render(request, "app/job_detail.html", context)
     except:
