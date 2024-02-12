@@ -9,14 +9,15 @@ def subscribe(request):
     if request.POST:
         subscribe_form = SubscribeForm(request.POST)
         if subscribe_form.is_valid():
-            print(f"\033[36m█▓▒░ {__name__} | valid form \033[0m")
-            print(f"\033[34m█▓▒░ {__name__} | {subscribe_form.cleaned_data} \033[0m")
-            email = subscribe_form.cleaned_data['email']
-            first_name = subscribe_form.cleaned_data['first_name']
-            last_name = subscribe_form.cleaned_data['last_name']
-            print(f"\033[35m█▓▒░ {__name__} | {email} \033[0m")
-            subscribe = Subscribe(first_name=first_name, last_name=last_name, email=email)
-            subscribe.save()
+            subscribe_form.save()
+            # print(f"\033[36m█▓▒░ {__name__} | valid form \033[0m")
+            # print(f"\033[34m█▓▒░ {__name__} | {subscribe_form.cleaned_data} \033[0m")
+            # email = subscribe_form.cleaned_data['email']
+            # first_name = subscribe_form.cleaned_data['first_name']
+            # last_name = subscribe_form.cleaned_data['last_name']
+            # print(f"\033[35m█▓▒░ {__name__} | {email} \033[0m")
+            # subscribe = Subscribe(first_name=first_name, last_name=last_name, email=email)
+            # subscribe.save()
             return redirect(reverse('thank_you'))
     context={"form": subscribe_form, "email_error_empty": email_error_empty}
     return render(request, 'subscribe/subscribe.html', context)
