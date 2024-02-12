@@ -9,7 +9,17 @@
 <body>
     <form method="POST">
         {% csrf_token %}
+
+        {% for field in form %}
         <div class="subscribe-field">
+            {{field.errors}}
+            <label for={{"field.id_for_label"}}> 
+                {{field.label}}</label>
+            {{field}}
+        </div>
+        {% endfor %}
+
+        {% comment %} <div class="subscribe-field">
             {{ form.first_name.errors }}
             <label for={{"form.first_name.id_for_label"}}> {{form.first_name.label}}</label>
             {{ form.first_name }}
@@ -25,7 +35,7 @@
             {{ form.email.errors }}
             <label for={{"form.email.id_for_label"}}> {{form.email.label}}</label>
             {{ form.email }}
-        </div>
+        </div> {% endcomment %}
 
         {% comment %} {% csrf_token %}
 
