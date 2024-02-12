@@ -3,7 +3,6 @@ from django.urls import reverse
 from subscribe.forms import SubscribeForm
 from subscribe.models import Subscribe
 
-
 def subscribe(request):
     subscribe_form = SubscribeForm()
     email_error_empty = ""

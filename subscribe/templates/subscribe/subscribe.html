@@ -9,7 +9,7 @@
 <body>
     <form method="POST">
         {% csrf_token %}
-        {{form}}
+        {{form.as_ul}}
         <input type="submit" value="Submit">
         {% comment %} {% csrf_token %}
 
