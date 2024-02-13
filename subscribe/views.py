@@ -13,7 +13,7 @@ def subscribe(request):
             # print(f"\033[36m█▓▒░ {__name__} | valid form \033[0m")
             # print(f"\033[34m█▓▒░ {__name__} | {subscribe_form.cleaned_data} \033[0m")
             # email = subscribe_form.cleaned_data['email']
-            # first_name = subscribe_form.cleaned_data['first_name']
+            # first_name = subscribe_form.cleaned_data['first_name'] 
             # last_name = subscribe_form.cleaned_data['last_name']
             # print(f"\033[35m█▓▒░ {__name__} | {email} \033[0m")
             # subscribe = Subscribe(first_name=first_name, last_name=last_name, email=email)

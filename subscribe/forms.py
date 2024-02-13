@@ -1,11 +1,24 @@
 from django import forms
 from subscribe.models import Subscribe
+from django.utils.translation import gettext_lazy as _
 
 class SubscribeForm(forms.ModelForm):
     """Linking the model to a form and adding the fields wanted to render and display"""
     class Meta:
         model=Subscribe
+        # exclude=('first_name',)
         fields='__all__'
+        labels={
+            'first_name':_('Enter first name'),
+            'last_name':_('Enter last name'),
+            'email':_('Enter email')
+        }
+        help_texts={'first_name':_('Enter characters only')}
+        error_messages={
+            'first_name':{
+                'required':_('You cannot move forward without first name')
+            }
+        }
 
 
 
