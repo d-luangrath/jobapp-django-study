@@ -1,23 +1,14 @@
-{% load static %}
+{% extends "base.html" %}
+{% block title %}FlixCareers | Subscribe{% endblock title %}
 
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" context="IE=edge">
-    <meta name="viewpoint", content='width=device-width initial-scale=1.0'>
-    <link rel="stylesheet" type="text/css" href="{% static 'subscribe/main.css' %}">
-    <title>Subscribe Form</title>
-</head>
-
-<body>
-    <h1>Subscribe Form</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Submit">
-    </form>
-    <button onclick="popup()">Click me</button>
-    <script src="{% static 'subscribe/main.js' %}"></script>
-</body>
-</html>
+{% block content %}
+    <section>
+      <div class="container">
+          <form class="email-form" method="POST">
+           {% csrf_token %}
+           {{form.as_p}}
+          <button class="email-submit">Submit</button>
+          </form>
+      </div>
+    </section>
+{% endblock content %}
