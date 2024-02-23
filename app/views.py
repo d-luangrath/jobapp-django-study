@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.template import loader
 from app.models import JobPost
 
+import os
 
 job_title = [
     "First Job",
@@ -40,6 +41,7 @@ def job_list(request):
     return render(request, "app/index.html", context)
 
 def job_detail(request, job_id):
+    print(f"\033[36m█▓▒░ {__name__} | {os.getenv('DATABASE_URL')=} \033[0m")
     try:
         if job_id == 0:
             return redirect(reverse('jobs_home'))
