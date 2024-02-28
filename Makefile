@@ -16,7 +16,7 @@ run: ## run Django app locally
 	$(ACTIVATE) python3 manage.py runserver
 
 heroku-logs:
-	heroku logs --tail --app jobapp-1
+	heroku logs --tail --app job-app-cli
 
 
 .PHONY:
