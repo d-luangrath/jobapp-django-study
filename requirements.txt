@@ -2,9 +2,10 @@ asgiref==3.7.2
 asttokens==2.4.1
 decorator==5.1.1
 Django==4.0.10
+dj_database_url==2.1.0
 executing==2.0.1
 gunicorn==21.2.0
-ipython==8.21.0
+ipython==8.22.1
 jedi==0.19.1
 matplotlib-inline==0.1.6
 packaging==23.2
