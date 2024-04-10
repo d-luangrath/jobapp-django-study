@@ -25,4 +25,4 @@ This web application provides a user-friendly interface for browsing a list of j
 
 ### Accessing the application
 The application is deployed on heroku 
-https://jobapp-1-eac76227ac9c.herokuapp.com/
+https://job-app-cli-f1765a9c3772.herokuapp.com/
